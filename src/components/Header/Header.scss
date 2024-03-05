@@ -1,0 +1,14 @@
+.header {
+  padding: 15px;
+
+  &__link {
+    font-size: 26px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #000;
+
+    &:not(:last-child){
+      margin-right: 30px;
+    }
+  }
+}
