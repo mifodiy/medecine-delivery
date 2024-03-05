@@ -1,6 +1,7 @@
 import Header from '../Header/Header';
 import ShopList from '../ShopList/ShopList';
 import ProductList from '../ProductList/ProductList';
+import './App.scss'
 
 function App() {
   return (

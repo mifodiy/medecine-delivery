@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
-import {useHttp} from '../../hooks/http.hook'
+import {useHttp} from '../../hook/http.hook'
 
 const initialState = {
   shops: [],
