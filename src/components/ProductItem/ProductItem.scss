@@ -1,0 +1,23 @@
+.product-item {
+  width: 300px;
+  border: 1px solid #000;
+  border-radius: 10px;
+
+
+  &__img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+  }
+
+  &__box {
+    text-align: right;
+    padding: 15px;
+  }
+
+  &__title {
+    text-align: left;
+  }
+
+}
