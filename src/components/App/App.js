@@ -1,9 +1,10 @@
-import { Suspense } from "react";
+import { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from '../Header/Header';
-import ShopPage from "../pages/ShopPage";
-import CartPage from "../pages/CartPage";
 import './App.scss'
+
+const ShopPage = lazy(() => import("../pages/ShopPage"));
+const CartPage =lazy(() => import("../pages/CartPage"));
 
 function App() {
   return (
