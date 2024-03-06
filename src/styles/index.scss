@@ -24,3 +24,32 @@ ul {
 		color: #fff;
 	}
 }
+
+.btn-close {
+	width: 20px;
+	height: 20px;
+	border: 1px solid #000;
+	border-radius: 50%;
+	background-color: transparent;
+	position: relative;
+	cursor: pointer;
+
+	&::after,
+	&::before{
+			content: '';
+			position: absolute;
+			width: 12px;
+			height: 2px;
+			background-color:#000;
+			top: 50%;
+			left: 50%;
+	}
+
+	&::after {
+			transform: translate(-50%, -50%) rotate(45deg);
+	}
+
+	&::before {
+			transform: translate(-50%, -50%) rotate(315deg);
+	}
+}
