@@ -4,6 +4,7 @@ import {useHttp} from '../../hook/http.hook'
 const initialState = {
   shops: [],
   shopsLoadingStatus: 'idle',
+	activeShop: 1
 }
 
 export const fetchShops = createAsyncThunk(
@@ -17,6 +18,12 @@ export const fetchShops = createAsyncThunk(
 const shopsSlice = createSlice({
   name: 'shops',
   initialState,
+	reducers: {
+    changeActiveShop: (state, action) => {
+      state.activeShop = action.payload
+    }
+
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchShops.pending, state => {state.shopsLoadingStatus = 'loading'})
@@ -30,5 +37,8 @@ const shopsSlice = createSlice({
 
 const {actions, reducer} = shopsSlice;
 
+export const {
+  changeActiveShop
+} = actions
 
 export default reducer

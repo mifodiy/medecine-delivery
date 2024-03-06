@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import { useDispatch, useSelector } from 'react-redux'
 
 import ShopItem from "../ShopItem/ShopItem"
-import { fetchShops } from "./shopSlice"
+import { fetchShops, changeActiveShop } from "./shopSlice"
 import './ShopList.scss'
 
 const ShopList = () => {
@@ -14,8 +14,12 @@ const ShopList = () => {
     dispatch(fetchShops())
   },[])
 
+	const onChangeShop = (id) => {
+    dispatch(changeActiveShop(id));
+  }
+
 	const elements = shops?.map(item => {
-    return <ShopItem key={item.id} name={item.name} id={item.id} />
+    return <ShopItem key={item.id} name={item.name} id={item.id} onChangeShop={onChangeShop}/>
   })
 
   return (
