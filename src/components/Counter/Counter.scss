@@ -1,0 +1,49 @@
+.count {
+  width: 80px;
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+  border: 2px solid #68898d;
+
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  &__amount {
+    font-size: 24px;
+    margin-left: 5px;
+  }
+
+  &__btn {
+    width: 30px;
+    height: 15px;
+    background-color: #d9d9d9;
+    position: relative;
+    border: none;
+    cursor: pointer;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &--minus::after {
+      background-image: url('../../assets/minus-icon.svg');
+    }
+
+    &--plus::after {
+      background-image: url('../../assets/plus-icon.svg');
+    }
+  }
+}
