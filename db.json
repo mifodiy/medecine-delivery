@@ -10,7 +10,7 @@
           "title": "Аспірин",
           "url": "https://www.aspirin.ru/sites/g/files/vrxlpx38761/files/styles/desktop_1000xauto/public/2021-03/ASPEXP.png?itok=YxMiDJQV",
           "price": 10,
-					"datetime": 1709651104382
+          "datetime": 1709651104382
         },
         {
           "id": 2,
@@ -18,7 +18,7 @@
           "title": "Парацетамол",
           "url": "https://m.apteka911.ua/content/shop/products/27129/photos/68118-27129-small-300x300-7253.jpg",
           "price": 5,
-					"datetime": 1709651204382
+          "datetime": 1709651204382
         },
         {
           "id": 3,
@@ -26,7 +26,7 @@
           "title": "Ібупрофен",
           "url": "https://root.tblcdn.com/img/goods/2c9699ac-e902-4661-93b9-3ea090cea22c/1/img_0.jpg?v=AAAAAAhZNfA",
           "price": 7,
-					"datetime": 1709651154382
+          "datetime": 1709651154382
         },
         {
           "id": 4,
@@ -34,7 +34,7 @@
           "title": "Амоксицилін",
           "url": "https://root.tblcdn.com/img/goods/b31af9f3-c239-4f7e-8dba-c29d639c9996/1/img_0.jpg?v=AAAAAAhZJPM",
           "price": 11,
-					"datetime": 1709651004382
+          "datetime": 1709651004382
         },
         {
           "id": 5,
@@ -42,7 +42,7 @@
           "title": "Валіум",
           "url": "https://www.mayak-zdorovya.com.ua/contentimages/articles/valium.jpg",
           "price": 15,
-					"datetime": 1709651101382
+          "datetime": 1709651101382
         },
         {
           "id": 6,
@@ -50,7 +50,7 @@
           "title": "Левотироксин",
           "url": "https://root.tblcdn.com/img/goods/7792db86-64da-4f3f-ad27-a847f6f607b1/1/img_0.jpg?v=AAAAAAoOCrw",
           "price": 14,
-					"datetime": 1709651144382
+          "datetime": 1709651144382
         }
       ]
     },
@@ -64,7 +64,7 @@
           "title": "Вітамін С",
           "url": "https://root.tblcdn.com/img/goods/64c97d84-a498-11ea-bab4-000c29ab36d9/1/img_0.jpg?v=AAAAAAlWCMY",
           "price": 8,
-					"datetime": 1709651244382
+          "datetime": 1709651244382
         },
         {
           "id": 2,
@@ -72,7 +72,7 @@
           "title": "Вітамін D",
           "url": "https://root.tblcdn.com/img/goods/2d079538-0fc3-447b-a0e5-ae0151e14420/1/img_0.jpg?v=AAAAAAoIAco",
           "price": 8,
-					"datetime": 1709652104382
+          "datetime": 1709652104382
         },
         {
           "id": 3,
@@ -80,7 +80,7 @@
           "title": "Дексаметазон",
           "url": "https://root.tblcdn.com/img/goods/28348b8a-0da2-46e3-ba92-65589c3c9bd4/1/img_0.jpg?v=AAAAAAnh5w0",
           "price": 12,
-					"datetime": 1709651164382
+          "datetime": 1709651164382
         },
         {
           "id": 4,
@@ -88,7 +88,7 @@
           "title": "Флуконазол",
           "url": "https://root.tblcdn.com/img/goods/7237b51b-e669-4064-8314-0b9dc838dbdf/1/img_0.jpg?v=AAAAAAnoUMo",
           "price": 9,
-					"datetime": 1709651108382
+          "datetime": 1709651108382
         },
         {
           "id": 5,
@@ -96,7 +96,7 @@
           "title": "Омепразол",
           "url": "https://root.tblcdn.com/img/goods/ed3066b9-a32f-4f59-9152-0bf224ce47ce/1/img_0.jpg?v=AAAAAAnqkJA",
           "price": 15,
-					"datetime": 1709651304382
+          "datetime": 1709651304382
         },
         {
           "id": 6,
@@ -104,7 +104,7 @@
           "title": "Метформін",
           "url": "https://root.tblcdn.com/img/goods/9aa12f29-d963-4ba5-a673-4964a13113b1/1/img_0.jpg?v=AAAAAAnyQ0",
           "price": 14,
-					"datetime": 1709652504382
+          "datetime": 1709652504382
         }
       ]
     },
@@ -118,7 +118,7 @@
           "title": "Ранітідин",
           "url": "https://root.tblcdn.com/img/goods/578ca2ce-0d39-45d3-a989-aa5ebd0e42ff/1/img_0.jpg?v=AAAAAAnh5xE",
           "price": 8,
-					"datetime": 1709651184382
+          "datetime": 1709651184382
         },
         {
           "id": 2,
@@ -126,7 +126,7 @@
           "title": "Амітриптилін",
           "url": "https://root.tblcdn.com/img/goods/c33faeab-0baf-4854-a750-daf351501d2c/1/img_0.jpg?v=AAAAAAnqi8I",
           "price": 8,
-					"datetime": 1709653104382
+          "datetime": 1709653104382
         },
         {
           "id": 3,
@@ -134,7 +134,7 @@
           "title": "Мезим",
           "url": "https://root.tblcdn.com/img/goods/5f62cc39-0b68-4092-b240-ab0664013bbd/1/img_0.jpg?v=AAAAAAnyLg",
           "price": 12,
-					"datetime": 1709651124382
+          "datetime": 1709651124382
         },
         {
           "id": 4,
@@ -142,7 +142,7 @@
           "title": "Вітамін D",
           "url": "https://root.tblcdn.com/img/goods/2d079538-0fc3-447b-a0e5-ae0151e14420/1/img_0.jpg?v=AAAAAAoIAco",
           "price": 9,
-					"datetime": 1709655104382
+          "datetime": 1709655104382
         },
         {
           "id": 5,
@@ -150,7 +150,7 @@
           "title": "Амоксицилін",
           "url": "https://root.tblcdn.com/img/goods/b31af9f3-c239-4f7e-8dba-c29d639c9996/1/img_0.jpg?v=AAAAAAhZJPM",
           "price": 15,
-					"datetime": 1709651185382
+          "datetime": 1709651185382
         },
         {
           "id": 6,
@@ -158,66 +158,66 @@
           "title": "Флуконазол",
           "url": "https://root.tblcdn.com/img/goods/7237b51b-e669-4064-8314-0b9dc838dbdf/1/img_0.jpg?v=AAAAAAnoUMo",
           "price": 14,
-					"datetime": 1709651304382
+          "datetime": 1709651304382
         }
-			]
-		},
-		{
-			"id": 4,
-			"name": "Сімейна аптека",
-			"items": [
-				{
-					"id": 1,
-					"shop": "Сімейна аптека",
-					"title": "Аспірин",
-					"url": "https://www.aspirin.ru/sites/g/files/vrxlpx38761/files/styles/desktop_1000xauto/public/2021-03/ASPEXP.png?itok=YxMiDJQV",
-					"price": 8,
-					"datetime": 1709651104382
-				},
-				{
-					"id": 2,
-					"shop": "Сімейна аптека",
-					"title": "Ібупрофен",
-					"url": "https://root.tblcdn.com/img/goods/2c9699ac-e902-4661-93b9-3ea090cea22c/1/img_0.jpg?v=AAAAAAhZNfA",
-					"price": 8,
-					"datetime": 1709651164382
-				},
-				{
-					"id": 3,
-					"shop": "Сімейна аптека",
-					"title": "Омепразол",
-					"url": "https://root.tblcdn.com/img/goods/ed3066b9-a32f-4f59-9152-0bf224ce47ce/1/img_0.jpg?v=AAAAAAnqkJA",
-					"price": 12,
-					"datetime": 1709651105382
-				},
-				{
-					"id": 4,
-					"shop": "Сімейна аптека",
-					"title": "Мезим",
-					"url": "https://root.tblcdn.com/img/goods/5f62cc39-0b68-4092-b240-ab0664013bbd/1/img_0.jpg?v=AAAAAAnyLg",
-					"price": 9,
-					"datetime": 1709652104382
-				},
-				{
-					"id": 5,
-					"shop": "Сімейна аптека",
-					"title": "Валіум",
-					"url": "https://www.mayak-zdorovya.com.ua/contentimages/articles/valium.jpg",
-					"price": 15,
-					"datetime": 1709651404382
-				},
-				{
-					"id": 6,
-					"shop": "Сімейна аптека",
-					"title": "Вітамін С",
-					"url": "https://root.tblcdn.com/img/goods/64c97d84-a498-11ea-bab4-000c29ab36d9/1/img_0.jpg?v=AAAAAAlWCMY",
-					"price": 14,
-					"datetime": 1709652404382
-				}
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Сімейна аптека",
+      "items": [
+        {
+          "id": 1,
+          "shop": "Сімейна аптека",
+          "title": "Аспірин",
+          "url": "https://www.aspirin.ru/sites/g/files/vrxlpx38761/files/styles/desktop_1000xauto/public/2021-03/ASPEXP.png?itok=YxMiDJQV",
+          "price": 8,
+          "datetime": 1709651104382
+        },
+        {
+          "id": 2,
+          "shop": "Сімейна аптека",
+          "title": "Ібупрофен",
+          "url": "https://root.tblcdn.com/img/goods/2c9699ac-e902-4661-93b9-3ea090cea22c/1/img_0.jpg?v=AAAAAAhZNfA",
+          "price": 8,
+          "datetime": 1709651164382
+        },
+        {
+          "id": 3,
+          "shop": "Сімейна аптека",
+          "title": "Омепразол",
+          "url": "https://root.tblcdn.com/img/goods/ed3066b9-a32f-4f59-9152-0bf224ce47ce/1/img_0.jpg?v=AAAAAAnqkJA",
+          "price": 12,
+          "datetime": 1709651105382
+        },
+        {
+          "id": 4,
+          "shop": "Сімейна аптека",
+          "title": "Мезим",
+          "url": "https://root.tblcdn.com/img/goods/5f62cc39-0b68-4092-b240-ab0664013bbd/1/img_0.jpg?v=AAAAAAnyLg",
+          "price": 9,
+          "datetime": 1709652104382
+        },
+        {
+          "id": 5,
+          "shop": "Сімейна аптека",
+          "title": "Валіум",
+          "url": "https://www.mayak-zdorovya.com.ua/contentimages/articles/valium.jpg",
+          "price": 15,
+          "datetime": 1709651404382
+        },
+        {
+          "id": 6,
+          "shop": "Сімейна аптека",
+          "title": "Вітамін С",
+          "url": "https://root.tblcdn.com/img/goods/64c97d84-a498-11ea-bab4-000c29ab36d9/1/img_0.jpg?v=AAAAAAlWCMY",
+          "price": 14,
+          "datetime": 1709652404382
+        }
       ]
     }
   ],
   "orders": [
-   
+		
   ]
 }
