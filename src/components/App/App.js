@@ -1,18 +1,21 @@
+import { Suspense } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from '../Header/Header';
-import ShopList from '../ShopList/ShopList';
-import ProductList from '../ProductList/ProductList';
+import ShopPage from "../pages/ShopPage";
 import './App.scss'
 
 function App() {
   return (
-    <div className="app">
-      <Header/>
-      <div className='app__wrapper'>
-        <ShopList />
-        <ProductList />
+    <Router>
+      <div className="app">
+        <Header />
+        <Suspense>
+          <Routes>
+            <Route path="/" element={<ShopPage/>}/>
+          </Routes>
+        </Suspense>
       </div>
-
-    </div>
+    </Router>
   );
 }
 
