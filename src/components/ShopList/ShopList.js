@@ -2,12 +2,13 @@ import { useEffect } from "react"
 import { useDispatch, useSelector } from 'react-redux'
 
 import ShopItem from "../ShopItem/ShopItem"
+import Spinner from '../Spinner/Spinner'
 import { fetchShops, changeActiveShop } from "./shopSlice"
 import './ShopList.scss'
 
 const ShopList = () => {
 	const dispatch = useDispatch();
-  const {shops} = useSelector(state => state.shops)
+  const {shops, shopsLoadingStatus} = useSelector(state => state.shops)
 	const {processShop} = useSelector(state => state.cart)
 
 	useEffect(() => {
@@ -19,6 +20,12 @@ const ShopList = () => {
     if (!processShop){
       dispatch(changeActiveShop(id));
     }
+  }
+
+	if (shopsLoadingStatus === "loading") {
+    return <Spinner />;
+  } else if (shopsLoadingStatus === "error") {
+    return <h5 className="error">Ошибка загрузки</h5>
   }
 
 	const elements = shops?.map(item => {
