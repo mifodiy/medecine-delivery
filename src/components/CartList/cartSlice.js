@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
   items: [] ,
-  totalPrice: 0
+  totalPrice: 0,
+	processShop: null,
 }
 
 const countTotalPrice = (arr) => {
@@ -27,11 +28,16 @@ const cartSlice = createSlice({
         })
       }
 
+			state.processShop = action.payload.shop;
       state.totalPrice = countTotalPrice(state.items); 
     },
     removeItem: (state, action) => {
       state.items = state.items.filter(obj => obj.id !== action.payload);
       state.totalPrice = countTotalPrice(state.items); 
+
+			if(state.items.length === 0){
+        state.processShop = null;
+      }
     },
     incCount: (state, action) => {
       const findItem = state.items.find(obj => obj.id === action.payload);
@@ -44,6 +50,11 @@ const cartSlice = createSlice({
       findItem.count--;
 
       state.totalPrice = countTotalPrice(state.items); 
+    },
+		clearCart: state => {
+      state.items = [];
+      state.totalPrice = countTotalPrice(state.items);
+      state.processShop = null;
     }
   }
 })
@@ -54,7 +65,8 @@ export const {
   addItem,
   removeItem,
   incCount,
-  decCount
+  decCount,
+	clearCart
 } = actions
 
 export default reducer
