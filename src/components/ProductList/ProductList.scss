@@ -1,24 +1,24 @@
 @import '../../styles/var.scss';
 
-.product-list {
+.product {
 	max-width: 750px;
 	width: 100%;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 20px;
+	display: flex;
+	flex-direction: column;
 	height: 70vh;
 	overflow-y: scroll;
 	box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.25);
-	padding: 30px;
+	padding: 15px 30px 30px;
 	border-radius: 5px;
+	gap: 30px;
+
+	@include r(992) {
+		height: auto;
+		max-width: 100%;
+	}
 
 	@include r(576) {
 		padding: 15px;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		height: auto;
-		margin-bottom: 30px;
 	}
 
 	&::-webkit-scrollbar {
@@ -31,4 +31,43 @@
 		border-radius: 8px;
 		background-clip: padding-box;
 	}
+
+	&__filters {
+		align-self: flex-end;
+		display: flex;
+		gap: 20px;
+	}
+
+	&__btn {
+		border: none;
+		background-color: transparent;
+		padding: 5px 10px;
+		cursor: pointer;
+
+		&:hover {
+			text-decoration: underline;
+		}
+
+
+	}
+
+	&__list {
+		width: 100%;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 20px;
+
+		@include r(992) {
+			justify-items: center
+		}
+
+		@include r(576) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			height: auto;
+			margin-bottom: 30px;
+		}
+	}
 }
+

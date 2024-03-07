@@ -1,20 +1,36 @@
-import { useEffect } from 'react'
-import { useSelector } from 'react-redux'
+import { useEffect, useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 
 import ProductItem from '../ProductItem/ProductItem'
 import Spinner from '../Spinner/Spinner'
+import {sortByPriceASC, sortByPriceDESC, sortByTime} from '../ShopList/shopSlice'
 
 import './ProductList.scss'
 
 const ProductList = () => {
-	const {activeShop, shops, shopsLoadingStatus} = useSelector(state => state.shops);
-  const products = shops.length > 1 ? shops.filter(item => item.id === activeShop)[0].items : []
+	const {activeShop, products, shopsLoadingStatus} = useSelector(state => state.shops);
   const cartItems = useSelector(state => state.cart.items);
+  const [isFilterASC, setIsFilterASC] = useState(true);
+  const dispatch = useDispatch();
 
 
 	useEffect(() => {
     renderProductList(products)
   },[activeShop])
+
+  const handlFilterByPrice = () => {
+    if (isFilterASC) {
+      dispatch(sortByPriceASC());
+      setIsFilterASC(!isFilterASC);
+    } else {
+      dispatch(sortByPriceDESC())
+      setIsFilterASC(!isFilterASC)
+    }
+  }
+
+  const handlFilterByTime = () => {
+    dispatch(sortByTime());
+  }
 
 	if (shopsLoadingStatus === "loading") {
     return <Spinner />;
@@ -33,9 +49,18 @@ const ProductList = () => {
 	const elements = renderProductList(products)
 
   return (
-    <ul className="product-list">
-      {elements}
-    </ul>
+    <div className="product">
+      <div className='product__filters'>
+        <button className='product__btn' onClick={handlFilterByTime}>Самі нові</button>
+        <button className='product__btn' onClick={handlFilterByPrice}>
+          {isFilterASC ? 'Від меншого к більшому' :'Від більшого к меншому' }
+        </button>
+      </div>
+      <ul className="product__list">
+        {elements}
+      </ul>
+    </div>
+    
   )
 }
 

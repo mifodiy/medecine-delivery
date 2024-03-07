@@ -7,6 +7,7 @@ const activeCoordinates = localStorage.getItem('activeCoordinates') !== null ? J
 
 const initialState = {
   shops: [],
+  products: [],
   shopsLoadingStatus: 'idle',
 	activeShop,
   activeAddress,
@@ -35,9 +36,21 @@ const shopsSlice = createSlice({
       state.activeShop = action.payload;
       state.activeAddress = state.shops.find(obj => obj.id === action.payload).location.address;
       state.activeCoordinates = state.shops.find(obj => obj.id === action.payload).location.coordinates;
+      state.products = state.shops.find(obj => obj.id === action.payload).items;
 
 			setActiveAddress(state.activeShop, state.activeAddress, state.activeCoordinates);
+    },
+    sortByPriceASC: (state) => {
+      state.products = state.products.sort((prevProd, nextProd) => (prevProd.price - nextProd.price))
+
+    },
+    sortByPriceDESC: (state) => {
+      state.products = state.products.sort((prevProd, nextProd) => (nextProd.price - prevProd.price))
+    },
+    sortByTime: (state) => {
+      state.products = state.products.sort((prevProd, nextProd) => (nextProd.datetime - prevProd.datetime))
     }
+
 
   },
   extraReducers: (builder) => {
@@ -48,6 +61,7 @@ const shopsSlice = createSlice({
         state.shops = action.payload;
         state.activeAddress = state.shops[0].location.address;
         state.activeCoordinates = state.shops[0].location.coordinates;
+        state.products = state.shops[0].items;
 
 				setActiveAddress(state.activeShop, state.activeAddress, state.activeCoordinates);
       })
@@ -58,7 +72,10 @@ const shopsSlice = createSlice({
 const {actions, reducer} = shopsSlice;
 
 export const {
-  changeActiveShop
+  changeActiveShop,
+  sortByPriceASC,
+  sortByPriceDESC,
+  sortByTime
 } = actions
 
 export default reducer
