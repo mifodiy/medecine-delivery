@@ -1,23 +1,36 @@
+@import '../../styles/var.scss';
+
 .product-item {
-  width: 300px;
-  border: 1px solid #000;
-  border-radius: 10px;
+	max-width: 300px;
+	width: 100%;
+	;
+	border: 1px solid #000;
+	border-radius: 10px;
 
 
-  &__img {
-    width: 100%;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 10px 10px 0 0;
-  }
+	&__img {
+		width: 100%;
+		height: 120px;
+		object-fit: cover;
+		border-radius: 10px 10px 0 0;
+	}
 
-  &__box {
-    text-align: right;
-    padding: 15px;
-  }
+	&__box {
+		text-align: right;
+		padding: 15px;
 
-  &__title {
-    text-align: left;
-  }
+		@include r(576) {
+			text-align: center;
+		}
+	}
+
+	&__title {
+		text-align: left;
+		margin-bottom: 15px;
+
+		@include r(576) {
+			text-align: center;
+		}
+	}
 
 }

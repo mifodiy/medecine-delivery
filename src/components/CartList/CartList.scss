@@ -1,66 +1,111 @@
+@import '../../styles/var.scss';
+
 .cart-list {
-  width: calc(50% - 15px);
-  height: 70vh;
-  box-shadow: 0 0 4px 4px rgba(#000, 0.25);
-  border-radius: 5px;
-  padding: 30px;
-  overflow-y: auto;
+	width: calc(50% - 15px);
+	box-shadow: 0 0 4px 4px rgba(#000, 0.25);
+	border-radius: 5px;
+	padding: 30px;
+	overflow-y: auto;
 
-  &::-webkit-scrollbar {
-    width: 16px;
-}
+	@include r(992) {
+		width: 100%;
+		margin-bottom: 30px;
+	}
 
-&::-webkit-scrollbar-thumb {
-  background-color: rgb(34, 37, 201);
-  border: 4px solid transparent;
-  border-radius: 8px;
-  background-clip: padding-box;  
-}
+	@include r (470) {
+		padding: 15px;
+	}
 
+	&::-webkit-scrollbar {
+		width: 16px;
+	}
 
-  &__item {
-    border: 1px solid #000;
-    display: flex;
-    width: 100%;
+	&::-webkit-scrollbar-thumb {
+		background-color: rgb(34, 37, 201);
+		border: 4px solid transparent;
+		border-radius: 8px;
+		background-clip: padding-box;
+	}
+
+	&__items {
+
+		@include r(992) {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 15px;
+		}
+
+		@include r (870) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+	}
+
+	&__item {
+		border: 1px solid #000;
+		display: flex;
+		width: 100%;
 		height: 170px;
-    border-radius: 10px;
-    position: relative;
+		border-radius: 10px;
+		position: relative;
 
-    &:not(:last-child){
-      margin-bottom: 15px;
-    }
-  }
+		@include r (470) {
+			flex-direction: column;
+			align-items: center;
+			height: 100%;
+			padding: 15px;
+		}
 
-  &__img {
-    max-width: 200px;
-    border-radius: 10px 0 0 10px;
+		&:not(:last-child) {
+			margin-bottom: 15px;
+		}
+	}
+
+	&__img {
+		max-width: 200px;
+		border-radius: 10px 0 0 10px;
 		object-fit: cover;
-  }
 
-  &__box {
-    display: flex;
-    flex-basis: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+		@include r (470) {
+			border-radius: 10px;
+			margin-bottom: 15px;
+		}
+	}
 
-  &__title {
-    margin-bottom: 15px;
-  }
+	&__box {
+		display: flex;
+		flex-basis: 100%;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
 
-  &__price {
-    margin-bottom: 20px;
-  }
+	&__title {
+		margin-bottom: 15px;
+	}
 
-  &__count {
-    width: 40px;
-    height: 20px;
-  }
+	&__price {
+		margin-bottom: 20px;
+	}
 
-  &__btn.btn-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-  }
+	&__count {
+		width: 40px;
+		height: 20px;
+	}
+
+	&__btn.btn-close {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+	}
+}
+
+.cart__wrapper {
+	display: flex;
+
+	@include r(992) {
+		flex-wrap: wrap;
+	}
 }

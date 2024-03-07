@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
 }
 
 ul {
-    padding: 0;
-    list-style-type: none;
+	padding: 0;
+	list-style-type: none;
 }
 
 .btn {
@@ -19,6 +19,7 @@ ul {
 	border-radius: 15px;
 	cursor: pointer;
 	transition: all ease-in-out .5s;
+
 	&:hover {
 		background-color: #413c3c;
 		color: #fff;
@@ -35,22 +36,22 @@ ul {
 	cursor: pointer;
 
 	&::after,
-	&::before{
-			content: '';
-			position: absolute;
-			width: 12px;
-			height: 2px;
-			background-color:#000;
-			top: 50%;
-			left: 50%;
+	&::before {
+		content: '';
+		position: absolute;
+		width: 12px;
+		height: 2px;
+		background-color: #000;
+		top: 50%;
+		left: 50%;
 	}
 
 	&::after {
-			transform: translate(-50%, -50%) rotate(45deg);
+		transform: translate(-50%, -50%) rotate(45deg);
 	}
 
 	&::before {
-			transform: translate(-50%, -50%) rotate(315deg);
+		transform: translate(-50%, -50%) rotate(315deg);
 	}
 }
 
