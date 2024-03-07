@@ -9,6 +9,7 @@ import './ProductList.scss'
 const ProductList = () => {
 	const {activeShop, shops, shopsLoadingStatus} = useSelector(state => state.shops);
   const products = shops.length > 1 ? shops.filter(item => item.id === activeShop)[0].items : []
+  const cartItems = useSelector(state => state.cart.items);
 
 
 	useEffect(() => {
@@ -23,7 +24,9 @@ const ProductList = () => {
 
 	const renderProductList = (products) => {
     return products.map(({id, ...props}) => {
-      return <ProductItem key={id} id={id} {...props}/>
+      const count = cartItems.filter((item) => item.id === id)[0]?.count;
+
+      return <ProductItem key={id} id={id} count={count} {...props}/>
     })
   }
 
