@@ -11,8 +11,10 @@ import Map from "../Map/Map";
 
 import './CartForm.scss'
 
+const libraries = ['places']
+
 const CartForm = () => {
-  const addressRef = useRef();
+  const addressRef = useRef('');
   const [directionResponse, setDirectionResponse] = useState(null);
   const { totalPrice, items } = useSelector(state => state.cart);
   const { activeAddress } = useSelector(state => state.shops);
@@ -26,13 +28,13 @@ const CartForm = () => {
     address: yup.string().required('Address is a required field')
   }).required();
 
-  const { register, handleSubmit, formState: { errors } , reset} = useForm({
+  const { register, handleSubmit, formState: { errors } , reset, setValue} = useForm({
     resolver: yupResolver(schema)
   });
 
 	const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API,
-    libraries: ['places']
+    libraries
   })
 
   if (!isLoaded) {
@@ -44,6 +46,8 @@ const CartForm = () => {
       return
     }
 
+		setValue("address", addressRef.current.value, {shouldValidate: true});
+		
     // eslint-disable-next-line no-undef
     const directionService = new google.maps.DirectionsService();
     const result = await directionService.route({
@@ -56,12 +60,12 @@ const CartForm = () => {
   }
 
   const onSubmit = data =>{
-    const result = {...data, items};
+    const result = {...data, address: addressRef.current.value, items};
 
     request("http://localhost:3001/orders", 'POST', JSON.stringify(result))
     	.then(reset())
     	.then(dispatch(clearCart()))
-    	.catch('Bad')
+    	.catch('Something went wrong')
 
   } 
 
