@@ -1,12 +1,22 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 import {useHttp} from '../../hook/http.hook'
 
+const activeShop = localStorage.getItem('activeShop') !== null ? JSON.parse(localStorage.getItem('activeShop')) : "1";
+const activeAddress = localStorage.getItem('activeAddress') !== null ? JSON.parse(localStorage.getItem('activeAddress')) : null;
+const activeCoordinates = localStorage.getItem('activeCoordinates') !== null ? JSON.parse(localStorage.getItem('activeCoordinates')) : null;
+
 const initialState = {
   shops: [],
   shopsLoadingStatus: 'idle',
-	activeShop: '1',
-  activeAddress: null,
-  activeCoordinates: null
+	activeShop,
+  activeAddress,
+  activeCoordinates
+}
+
+const setActiveAddress = (activeShop, activeAddress, activeCoordinates) => {
+  localStorage.setItem('activeShop', JSON.stringify(activeShop));
+  localStorage.setItem('activeAddress', JSON.stringify(activeAddress));
+  localStorage.setItem('activeCoordinates', JSON.stringify(activeCoordinates));
 }
 
 export const fetchShops = createAsyncThunk(
@@ -25,6 +35,8 @@ const shopsSlice = createSlice({
       state.activeShop = action.payload;
       state.activeAddress = state.shops.find(obj => obj.id === action.payload).location.address;
       state.activeCoordinates = state.shops.find(obj => obj.id === action.payload).location.coordinates;
+
+			setActiveAddress(state.activeShop, state.activeAddress, state.activeCoordinates);
     }
 
   },
@@ -36,6 +48,8 @@ const shopsSlice = createSlice({
         state.shops = action.payload;
         state.activeAddress = state.shops[0].location.address;
         state.activeCoordinates = state.shops[0].location.coordinates;
+
+				setActiveAddress(state.activeShop, state.activeAddress, state.activeCoordinates);
       })
       .addCase(fetchShops.rejected, state => {state.shopsLoadingStatus = 'error'})
   }

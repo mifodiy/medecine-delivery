@@ -1,9 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit"
 
+const items = localStorage.getItem('cartItems') !== null ? JSON.parse(localStorage.getItem('cartItems')) : [];
+const totalPrice = localStorage.getItem('totalPrice') !== null ? JSON.parse(localStorage.getItem('totalPrice')) : 0;
+const processShop = localStorage.getItem('processShop') !== null ? JSON.parse(localStorage.getItem('processShop')) : null;
+
 const initialState = {
-  items: [] ,
-  totalPrice: 0,
-	processShop: null,
+  items,
+  totalPrice,
+	processShop,
+}
+
+const setItemFunc = (items, totalPrice, processShop) => {
+  localStorage.setItem('cartItems', JSON.stringify(items));
+  localStorage.setItem('totalPrice', JSON.stringify(totalPrice));
+  localStorage.setItem('processShop', JSON.stringify(processShop));
 }
 
 const countTotalPrice = (arr) => {
@@ -29,7 +39,9 @@ const cartSlice = createSlice({
       }
 
 			state.processShop = action.payload.shop;
-      state.totalPrice = countTotalPrice(state.items); 
+      state.totalPrice = countTotalPrice(state.items);
+			
+			setItemFunc(state.items.map(item => item), state.totalPrice, state.processShop);
     },
     removeItem: (state, action) => {
       state.items = state.items.filter(obj => obj.id !== action.payload);
@@ -38,23 +50,31 @@ const cartSlice = createSlice({
 			if(state.items.length === 0){
         state.processShop = null;
       }
+
+			setItemFunc(state.items.map(item => item), state.totalPrice, state.processShop);
     },
     incCount: (state, action) => {
       const findItem = state.items.find(obj => obj.id === action.payload);
       findItem.count++;
 
       state.totalPrice = countTotalPrice(state.items); 
+
+			setItemFunc(state.items.map(item => item), state.totalPrice, state.processShop);
     },
     decCount: (state, action) => {
       const findItem = state.items.find(obj => obj.id === action.payload);
       findItem.count--;
 
       state.totalPrice = countTotalPrice(state.items); 
+
+			setItemFunc(state.items.map(item => item), state.totalPrice, state.processShop);
     },
 		clearCart: state => {
       state.items = [];
       state.totalPrice = countTotalPrice(state.items);
       state.processShop = null;
+
+			setItemFunc(state.items.map(item => item), state.totalPrice, state.processShop);
     }
   }
 })
