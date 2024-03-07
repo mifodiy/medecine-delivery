@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { addItem } from '../CartList/cartSlice'
 import './ProductItem.scss'
 
-const ProductItem = ({title, url, id, price, shop, count}) => {
+const ProductItem = ({title, url, id, price, shop, count, type}) => {
   const dispatch = useDispatch();
 
   const onAddItem = () => {
@@ -17,7 +17,9 @@ const ProductItem = ({title, url, id, price, shop, count}) => {
         <h3 className="product-item__title">{title}<span className='product-item__price'>{price}грн.</span></h3>
 				<div className="product-item__wrapper">
 				<span className="product-item__count">{count && `${count} од.`}</span>
-				<button className="btn btn-cart" onClick={onAddItem}>Add to cart</button>
+				{
+          type !== 'order' && <button className="btn btn-cart" onClick={onAddItem}>Add to cart</button>
+        }
 				</div>
         
       </div>
