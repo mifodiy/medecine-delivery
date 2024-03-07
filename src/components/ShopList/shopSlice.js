@@ -24,7 +24,7 @@ export const fetchShops = createAsyncThunk(
   'shops/fetchShops',
   () => {
     const { request } = useHttp();
-    return request("http://localhost:3001/shops")
+    return request("https://project-data-mpfk.onrender.com/shops")
   }
 )
 
