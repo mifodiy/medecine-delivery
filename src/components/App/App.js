@@ -5,6 +5,7 @@ import './App.scss'
 
 const ShopPage = lazy(() => import("../pages/ShopPage"));
 const CartPage =lazy(() => import("../pages/CartPage"));
+const HistoryPage =lazy(() => import("../pages/HistoryPage"));
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<ShopPage/>}/>
             <Route path="/cart" element={<CartPage/>}/>
+            <Route path="/history" element={<HistoryPage/>}/>
         </Routes>
         </Suspense>
       </div>

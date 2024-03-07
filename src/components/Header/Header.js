@@ -7,6 +7,7 @@ const Header = () => {
       <nav className="header__menu">
 				<NavLink end to={'/'} className="header__link" style={({isActive}) => ({color: isActive ? '#9F0013' : '#232222'})}>Shop</NavLink>
         <NavLink to={'cart'} className="header__link" style={({isActive}) => ({color: isActive ? '#9F0013' : '#232222'})}>Cart</NavLink>
+        <NavLink to={'history'} className="header__link" style={({isActive}) => ({color: isActive ? '#9F0013' : '#232222'})}>History</NavLink>
       </nav>
     </div>
   )
