@@ -4,7 +4,10 @@
       "id": "1",
       "name": "9-1-1",
       "location": {
-        "coordinates": {"lat": 50.44739407662729, "lng": 30.52292691972628},
+        "coordinates": {
+          "lat": 50.44739407662729,
+          "lng": 30.52292691972628
+        },
         "address": "вулиця Хрещатик, 19-a, Київ, 01001"
       },
       "items": [
@@ -62,7 +65,10 @@
       "id": "2",
       "name": "Бажаємо здоров'я",
       "location": {
-        "coordinates": {"lat": 50.44865114368563, "lng": 30.523409717330665},
+        "coordinates": {
+          "lat": 50.44865114368563,
+          "lng": 30.523409717330665
+        },
         "address": "вулиця Хрещатик, 13, Київ, 02000"
       },
       "items": [
@@ -120,7 +126,10 @@
       "id": "3",
       "name": "Аптека Доброго Дня",
       "location": {
-        "coordinates": {"lat": 50.45083043627304, "lng": 30.526027553300334},
+        "coordinates": {
+          "lat": 50.45083043627304,
+          "lng": 30.526027553300334
+        },
         "address": "вулиця Хрещатик, 7/11, Київ, 02000"
       },
       "items": [
@@ -178,7 +187,10 @@
       "id": "4",
       "name": "Сімейна аптека",
       "location": {
-        "coordinates": {"lat": 50.45209807379294, "lng": 30.52624338313491},
+        "coordinates": {
+          "lat": 50.45209807379294,
+          "lng": 30.52624338313491
+        },
         "address": "вулиця Хрещатик, 6, Київ, 02000"
       },
       "items": [
@@ -234,6 +246,165 @@
     }
   ],
   "orders": [
-		
+    {
+      "id": "9a9d",
+      "firstName": "Volodymyr",
+      "email": "test@test.com",
+      "phoneNumber": "+380505555555",
+      "address": "Kyiv, Ukraine",
+      "items": [
+        {
+          "id": 1,
+          "title": "Аспірин",
+          "url": "https://www.aspirin.ru/sites/g/files/vrxlpx38761/files/styles/desktop_1000xauto/public/2021-03/ASPEXP.png?itok=YxMiDJQV",
+          "price": 10,
+          "shop": "9-1-1",
+          "count": 1
+        },
+        {
+          "id": 2,
+          "title": "Парацетамол",
+          "url": "https://m.apteka911.ua/content/shop/products/27129/photos/68118-27129-small-300x300-7253.jpg",
+          "price": 5,
+          "shop": "9-1-1",
+          "count": 2
+        },
+        {
+          "id": 4,
+          "title": "Амоксицилін",
+          "url": "https://root.tblcdn.com/img/goods/b31af9f3-c239-4f7e-8dba-c29d639c9996/1/img_0.jpg?v=AAAAAAhZJPM",
+          "price": 11,
+          "shop": "9-1-1",
+          "count": 1
+        }
+      ],
+      "totalPrice": 31
+    },
+    {
+      "id": "4811",
+      "firstName": "Volodymyr",
+      "email": "test@test.com",
+      "phoneNumber": "+380505555555",
+      "address": "KRENDEL на Хрещатику, Khreschatyk Street, Kyiv, Ukraine",
+      "items": [
+        {
+          "id": 1,
+          "title": "Вітамін С",
+          "url": "https://root.tblcdn.com/img/goods/64c97d84-a498-11ea-bab4-000c29ab36d9/1/img_0.jpg?v=AAAAAAlWCMY",
+          "price": 8,
+          "shop": "Бажаємо здоров'я",
+          "count": 1
+        },
+        {
+          "id": 2,
+          "title": "Вітамін D",
+          "url": "https://root.tblcdn.com/img/goods/2d079538-0fc3-447b-a0e5-ae0151e14420/1/img_0.jpg?v=AAAAAAoIAco",
+          "price": 8,
+          "shop": "Бажаємо здоров'я",
+          "count": 1
+        },
+        {
+          "id": 4,
+          "title": "Флуконазол",
+          "url": "https://root.tblcdn.com/img/goods/7237b51b-e669-4064-8314-0b9dc838dbdf/1/img_0.jpg?v=AAAAAAnoUMo",
+          "price": 9,
+          "shop": "Бажаємо здоров'я",
+          "count": 2
+        },
+        {
+          "id": 3,
+          "title": "Дексаметазон",
+          "url": "https://root.tblcdn.com/img/goods/28348b8a-0da2-46e3-ba92-65589c3c9bd4/1/img_0.jpg?v=AAAAAAnh5w0",
+          "price": 12,
+          "shop": "Бажаємо здоров'я",
+          "count": 1
+        }
+      ],
+      "totalPrice": 46
+    },
+    {
+      "id": "87b9",
+      "firstName": "Anna",
+      "email": "anna@test.com",
+      "phoneNumber": "+380506666666",
+      "address": "Київський столичний університет імені Бориса Грінченка, Bulvarno-Kudriavska Street, Kyiv, Ukraine",
+      "items": [
+        {
+          "id": 1,
+          "title": "Ранітідин",
+          "url": "https://root.tblcdn.com/img/goods/578ca2ce-0d39-45d3-a989-aa5ebd0e42ff/1/img_0.jpg?v=AAAAAAnh5xE",
+          "price": 8,
+          "shop": "Аптека Доброго Дня",
+          "count": 1
+        },
+        {
+          "id": 2,
+          "title": "Амітриптилін",
+          "url": "https://root.tblcdn.com/img/goods/c33faeab-0baf-4854-a750-daf351501d2c/1/img_0.jpg?v=AAAAAAnqi8I",
+          "price": 8,
+          "shop": "Аптека Доброго Дня",
+          "count": 1
+        },
+        {
+          "id": 4,
+          "title": "Вітамін D",
+          "url": "https://root.tblcdn.com/img/goods/2d079538-0fc3-447b-a0e5-ae0151e14420/1/img_0.jpg?v=AAAAAAoIAco",
+          "price": 9,
+          "shop": "Аптека Доброго Дня",
+          "count": 2
+        },
+        {
+          "id": 3,
+          "title": "Мезим",
+          "url": "https://root.tblcdn.com/img/goods/5f62cc39-0b68-4092-b240-ab0664013bbd/1/img_0.jpg?v=AAAAAAnyLg",
+          "price": 12,
+          "shop": "Аптека Доброго Дня",
+          "count": 1
+        }
+      ],
+      "totalPrice": 46
+    },
+    {
+      "id": "b5d1",
+      "firstName": "Anna",
+      "email": "anna@test.com",
+      "phoneNumber": "+380506666666",
+      "address": "улица Ярославов Вал, Kyiv, Ukraine",
+      "items": [
+        {
+          "id": 1,
+          "title": "Аспірин",
+          "url": "https://www.aspirin.ru/sites/g/files/vrxlpx38761/files/styles/desktop_1000xauto/public/2021-03/ASPEXP.png?itok=YxMiDJQV",
+          "price": 10,
+          "shop": "9-1-1",
+          "count": 2
+        },
+        {
+          "id": 2,
+          "title": "Парацетамол",
+          "url": "https://m.apteka911.ua/content/shop/products/27129/photos/68118-27129-small-300x300-7253.jpg",
+          "price": 5,
+          "shop": "9-1-1",
+          "count": 2
+        },
+        {
+          "id": 4,
+          "title": "Амоксицилін",
+          "url": "https://root.tblcdn.com/img/goods/b31af9f3-c239-4f7e-8dba-c29d639c9996/1/img_0.jpg?v=AAAAAAhZJPM",
+          "price": 11,
+          "shop": "9-1-1",
+          "count": 1
+        },
+        {
+          "id": 3,
+          "title": "Ібупрофен",
+          "url": "https://root.tblcdn.com/img/goods/2c9699ac-e902-4661-93b9-3ea090cea22c/1/img_0.jpg?v=AAAAAAhZNfA",
+          "price": 7,
+          "shop": "9-1-1",
+          "count": 1
+        }
+      ],
+      "totalPrice": 48
+    }
   ]
 }
