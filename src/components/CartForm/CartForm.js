@@ -1,16 +1,22 @@
+import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import { useSelector, useDispatch } from "react-redux";
+import { useJsApiLoader, Autocomplete } from '@react-google-maps/api'
 
 import  {useHttp} from '../../hook/http.hook'
 import { clearCart } from "../CartList/cartSlice";
+import Map from "../Map/Map";
 
 import './CartForm.scss'
 
 const CartForm = () => {
-  const {totalPrice, items} = useSelector(state => state.cart);
-  const {request} = useHttp();
+  const addressRef = useRef();
+  const [directionResponse, setDirectionResponse] = useState(null);
+  const { totalPrice, items } = useSelector(state => state.cart);
+  const { activeAddress } = useSelector(state => state.shops);
+  const { request } = useHttp();
   const dispatch = useDispatch();
   const phoneRegExp = /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/;
   const schema = yup.object({
@@ -23,19 +29,46 @@ const CartForm = () => {
   const { register, handleSubmit, formState: { errors } , reset} = useForm({
     resolver: yupResolver(schema)
   });
+
+	const { isLoaded } = useJsApiLoader({
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API,
+    libraries: ['places']
+  })
+
+  if (!isLoaded) {
+    return <h5>Map is not loading</h5>
+  }
+
+  const calculateRout = async () => {
+    if (addressRef.current.value === '') {
+      return
+    }
+
+    // eslint-disable-next-line no-undef
+    const directionService = new google.maps.DirectionsService();
+    const result = await directionService.route({
+      origin: activeAddress,
+      destination: addressRef.current.value,
+      // eslint-disable-next-line no-undef
+      travelMode: google.maps.TravelMode.DRIVING
+    });
+    setDirectionResponse(result);
+  }
+
   const onSubmit = data =>{
     const result = {...data, items};
 
     request("http://localhost:3001/orders", 'POST', JSON.stringify(result))
-    .then(reset())
-    .then(dispatch(clearCart()))
-    .catch('Bad')
+    	.then(reset())
+    	.then(dispatch(clearCart()))
+    	.catch('Bad')
 
   } 
 
 
   return (
     <form className="cart-form" onSubmit={handleSubmit(onSubmit)}>
+			<Map directionResponse={directionResponse} />
 
       <label className="cart-form__label">
         Name:
@@ -55,7 +88,9 @@ const CartForm = () => {
       <p className="cart-form__error">{errors.phoneNumber?.message}</p>
       <label className="cart-form__label">
         Address:
-        <input className="cart-form__input" {...register("address")} />
+        <Autocomplete onPlaceChanged={calculateRout}>
+          <input className="cart-form__input" {...register("address")} type="text" ref={addressRef} />
+        </Autocomplete>
       </label>
       <p className="cart-form__error">{errors.address?.message}</p>
 
