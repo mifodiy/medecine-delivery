@@ -37,5 +37,5 @@ Start the server
 
 ## Demo
 
-https://medecine-delivery-9ef9yj2a3-mifodiy91s-projects.vercel.app/
+https://medecine-delivery.vercel.app/
 
