@@ -8,7 +8,7 @@ import './ShopList.scss'
 
 const ShopList = () => {
 	const dispatch = useDispatch();
-  const {shops, shopsLoadingStatus} = useSelector(state => state.shops)
+  const {shops, shopsLoadingStatus, activeShop} = useSelector(state => state.shops)
 	const {processShop} = useSelector(state => state.cart)
 
 	useEffect(() => {
@@ -20,6 +20,10 @@ const ShopList = () => {
     if (!processShop){
       dispatch(changeActiveShop(id));
     }
+    
+    if (processShop && id !== activeShop) {
+      alert('В вашему кошику є товари з іншої аптеки');
+    }
   }
 
 	if (shopsLoadingStatus === "loading") {
@@ -29,7 +33,7 @@ const ShopList = () => {
   }
 
 	const elements = shops?.map(item => {
-    return <ShopItem key={item.id} name={item.name} id={item.id} onChangeShop={onChangeShop}/>
+    return <ShopItem key={item.id} name={item.name} id={item.id} activeShop={activeShop} onChangeShop={onChangeShop}/>
   })
 
   return (
