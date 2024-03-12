@@ -24,7 +24,7 @@ export const fetchShops = createAsyncThunk(
   'shops/fetchShops',
   () => {
     const { request } = useHttp();
-    return request("https://project-data-mpfk.onrender.com/shops")
+    return request("https://647478397de100807b1b010c.mockapi.io/shops")
   }
 )
 

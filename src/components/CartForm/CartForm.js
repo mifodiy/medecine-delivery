@@ -62,7 +62,7 @@ const CartForm = () => {
   const onSubmit = data =>{
     const result = {...data, address: addressRef.current.value, items, totalPrice};
 
-    request("https://project-data-mpfk.onrender.com/orders", 'POST', JSON.stringify(result))
+    request("https://647478397de100807b1b010c.mockapi.io/orders", 'POST', JSON.stringify(result))
     	.then(reset())
     	.then(dispatch(clearCart()))
     	.catch('Something went wrong')
